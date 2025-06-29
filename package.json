@@ -1,0 +1,44 @@
+{
+  "name": "lucas-cv-web",
+  "version": "1.0.0",
+  "description": "CV Web moderno para desarrollador especializado en Cursor AI",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --host=localhost --open=index.html",
+    "build": "echo 'Proyecto estático - no requiere build'",
+    "preview": "live-server --port=3000 --host=localhost --open=index.html",
+    "lint:html": "htmlhint *.html",
+    "lint:css": "stylelint *.css",
+    "optimize": "npm run optimize:images && npm run optimize:css",
+    "optimize:images": "echo 'Optimizar imágenes manualmente'",
+    "optimize:css": "cleancss -o styles.min.css styles.css"
+  },
+  "keywords": [
+    "cv",
+    "portfolio",
+    "cursor-ai",
+    "desarrollador",
+    "web-developer",
+    "resume",
+    "modern-cv"
+  ],
+  "author": "Lucas - Desarrollador Web",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0",
+    "clean-css-cli": "^5.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/lucas-cv-web.git"
+  },
+  "homepage": "https://tu-usuario.github.io/lucas-cv-web",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
