@@ -48,6 +48,11 @@ body {
     margin: 0;
     line-height: 1.1;
     color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.name:hover {
+    color: var(--accent);
 }
 
 .cursor {
@@ -134,6 +139,56 @@ main {
 .work.secondary .company {
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+/* Skills */
+.skills {
+    margin-bottom: 3rem;
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-name {
+    min-width: 120px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.skill-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.skill-fill.expert {
+    width: 95%;
+}
+
+.skill-fill.advanced {
+    width: 85%;
+}
+
+.skill-fill.proficient {
+    width: 75%;
 }
 
 /* Contact */
