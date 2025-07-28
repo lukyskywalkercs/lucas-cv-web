@@ -1,0 +1,92 @@
+:root {
+  --bg: #fdfaff;
+  --primary: #8e7fff;
+  --accent: #ffd6e0;
+  --text: #2a2a2a;
+  --gray: #e8e8e8;
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #6e5fe0;
+}
+
+.results {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--gray);
+}
+
+.results h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.emoji-list {
+  font-size: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.notice {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+} 

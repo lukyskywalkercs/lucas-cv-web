@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emoji Recommender (Simulado)</title>
+  <meta name="description" content="Simulador de recomendación de emojis para mensajes. UX suave y moderna.">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧠💬 Emoji Recommender</h1>
+      <p class="subtitle">Demostrando cómo la IA puede transformar ideas en apps. Escribe un mensaje y obtén sugerencias simuladas de emojis.</p>
+    </header>
+
+    <main>
+      <textarea id="messageInput" placeholder="Escribe tu mensaje aquí..."></textarea>
+      <button onclick="recommendEmojis()">Recomendar Emojis</button>
+
+      <div id="results" class="results hidden">
+        <h2>✨ Emojis sugeridos</h2>
+        <div id="emojiList" class="emoji-list"></div>
+      </div>
+
+      <div class="notice">
+        ⚠️ Este proyecto es un simulador. No utiliza una IA real.
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 

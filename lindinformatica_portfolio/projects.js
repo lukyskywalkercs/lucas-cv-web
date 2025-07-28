@@ -10,9 +10,9 @@ const projects = [
     link: "https://storage.googleapis.com/aura-financial-app/landing.html"
   },
   {
-    title: "Lucas Chabrera CV",
-    description: "Mi CV personal y profesional, destacando mi experiencia y habilidades.",
-    link: "../index.html" // Enlace a tu CV principal
+    title: "Recomendador de Emojis (Simulado)",
+    description: "Demo de cómo la IA puede transformar ideas en apps, recomendando emojis para tus mensajes.",
+    link: "../emoji_recommender_app/index.html"
   },
   {
     title: "Generador de texto rápido",
