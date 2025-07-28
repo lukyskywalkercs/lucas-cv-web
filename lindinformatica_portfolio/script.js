@@ -1,40 +1,32 @@
-// JavaScript para el portfolio de LindInformatica
+// Render de proyectos
+window.onload = () => {
+  const startTime = performance.now();
+  const list = document.getElementById("projectList");
+  const count = document.getElementById("projectCount");
 
-// Calcular tiempo de carga
-document.addEventListener('DOMContentLoaded', function() {
-    const startTime = performance.now();
-    
-    window.addEventListener('load', function() {
-        const loadTime = Math.round(performance.now() - startTime);
-        const loadTimeElement = document.getElementById('loadTime');
-        if (loadTimeElement) {
-            loadTimeElement.textContent = loadTime.toString().padStart(4, '0');
-        }
-    });
-});
+  // Asegurarse de que projects está definido (viene de projects.js)
+  if (typeof projects === 'undefined') {
+      console.error("projects.js no cargado o 'projects' no definido.");
+      return;
+  }
 
-// Contador de visitantes
-function updateVisitorCount() {
-    const visitorElement = document.getElementById('visitors');
-    if (!visitorElement) return;
+  projects.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "project-card";
 
-    let count = localStorage.getItem('lindin_visitorCount');
-    
-    if (!count) {
-        count = 0;
-    } else {
-        count = parseInt(count);
-    }
-    
-    // Incrementar solo si es una nueva sesión (básico, se puede mejorar)
-    if (sessionStorage.getItem('lindin_sessionVisited') !== 'true') {
-        count++;
-        sessionStorage.setItem('lindin_sessionVisited', 'true');
-    }
+    card.innerHTML = `
+      <div class="project-title">${project.title}</div>
+      <div class="project-description">${project.description}</div>
+      <a class="project-link" href="${project.link}" target="_blank">ver proyecto ↗</a>
+    `;
 
-    localStorage.setItem('lindin_visitorCount', count);
-    visitorElement.textContent = count.toString().padStart(6, '0');
-}
+    list.appendChild(card);
+  });
 
-// Ejecutar contador al cargar
-updateVisitorCount(); 
+  // contador de proyectos
+  count.textContent = projects.length.toString().padStart(2, '0');
+
+  // tiempo de carga
+  const loadTime = performance.now() - startTime;
+  document.getElementById("loadTime").textContent = Math.floor(loadTime);
+}; 
