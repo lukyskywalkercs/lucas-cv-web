@@ -1,0 +1,111 @@
+/* styles.css */
+
+:root {
+  --primary: #FFD600;
+  --black: #000;
+  --white: #FFF;
+  --font-main: 'Satoshi', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #444;
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  min-height: 140px;
+}
+
+.tones {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tones button {
+  flex: 1;
+  background: none;
+  border: 1px solid var(--black);
+  padding: 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tones button.active,
+.tones button:hover {
+  background-color: var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--black);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e5c200;
+}
+
+.output-box {
+  background-color: #f9f9f9;
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+
+.notice {
+  font-size: 0.9rem;
+  background-color: #fffbea;
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+} 

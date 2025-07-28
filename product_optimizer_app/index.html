@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Optimizador IA (Simulado)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛍️ Optimizador IA (Simulado)</h1>
+      <p class="subtitle">Genera textos de alto impacto con IA (simulada). Demostramos nuestra capacidad para integrar inteligencia artificial y crear nuevas oportunidades de negocio.</p>
+    </header>
+
+    <section>
+      <label for="input">Descripción del producto:</label>
+      <textarea id="input" placeholder="Ej. Zapatos de cuero color marrón..."></textarea>
+    </section>
+
+    <section>
+      <p>Selecciona el tono:</p>
+      <div class="tones">
+        <button onclick="setTone('casual')">Casual</button>
+        <button onclick="setTone('persuasivo')">Persuasivo</button>
+        <button onclick="setTone('profesional')">Profesional</button>
+      </div>
+    </section>
+
+    <button onclick="simulate()">Optimizar Descripción</button>
+
+    <section id="output-section" class="hidden">
+      <h2>Descripción optimizada</h2>
+      <div id="output" class="output-box"></div>
+      <button onclick="copyOutput()">Copiar</button>
+    </section>
+
+    <div class="notice">
+      ⚠️ Este sitio es una simulación. No se conecta a ninguna IA real.
+    </div>
+  </div>
+
+  <script>
+    let tone = 'casual';
+
+    function setTone(selected) {
+      tone = selected;
+      document.querySelectorAll('.tones button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function simulate() {
+      const input = document.getElementById('input').value.trim();
+      const outputDiv = document.getElementById('output');
+      const outputSection = document.getElementById('output-section');
+
+      if (!input) {
+        alert("Por favor, pega una descripción.");
+        return;
+      }
+
+      const simulatedText = {
+        casual: "¡Estos zapatos no solo se ven bien, también son súper cómodos! Perfectos para el día a día con estilo.",
+        persuasivo: "Conquista cada paso con estos zapatos de cuero. Elegancia, confort y durabilidad en un solo producto.",
+        profesional: "Zapatos de cuero de alta calidad con diseño clásico. Ideal para entornos formales y uso prolongado."
+      };
+
+      outputDiv.textContent = simulatedText[tone];
+      outputSection.classList.remove('hidden');
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text);
+      alert("Texto copiado al portapapeles.");
+    }
+  </script>
+</body>
+</html> 
