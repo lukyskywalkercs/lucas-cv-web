@@ -15,6 +15,11 @@ const projects = [
     link: "../emoji_recommender_app/index.html"
   },
   {
+    title: "Analizador de Rentabilidad (Simulado)",
+    description: "App de IA simulada que evalúa la rentabilidad de productos, ofreciendo cálculos y recomendaciones estratégicas para negocios.",
+    link: "../profitability_analyzer_app/index.html"
+  },
+  {
     title: "Generador de texto rápido",
     description: "Prototipo para testing de generación de texto con estructura rápida (UI minimalista).",
     link: "./apps/generador-texto/index.html"

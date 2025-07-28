@@ -1,0 +1,375 @@
+/* Paleta de Colores y Tipografía */
+:root {
+    --bg-color: #f8f9fa; /* Fondo muy claro, casi blanco */
+    --card-bg: #ffffff; /* Fondo blanco para las tarjetas */
+    --text-primary: #212529; /* Negro muy oscuro para texto principal */
+    --text-secondary: #6c757d; /* Gris para texto secundario/labels */
+    --accent-blue: #007bff; /* Azul primario para botones y acentos */
+    --accent-blue-dark: #0056b3; /* Azul más oscuro para hover */
+    --border-light: #e9ecef; /* Borde muy sutil para elementos */
+    --shadow-subtle: rgba(0, 0, 0, 0.05); /* Sombra muy suave */
+    --success-color: #28a745; /* Verde para éxito */
+    --warning-color: #ffc107; /* Amarillo para advertencia */
+    --danger-color: #dc3545; /* Rojo para peligro */
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reseteo y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background: transparent; /* El wrapper no tiene fondo, las tarjetas sí */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre header, main y footer */
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.app-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.app-subtitle {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+}
+
+/* Main Content */
+.app-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre secciones principales */
+}
+
+/* Tarjetas (Cards) */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-subtle);
+    border: 1px solid var(--border-light);
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-subtitle {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+/* Secciones de Input y Resultados */
+.input-card {
+    margin-bottom: 0; /* Ya hay gap en app-main */
+}
+
+.results-section {
+    margin-top: 0; /* Ya hay gap en app-main */
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Grid para los resultados */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 columnas fluidas */
+    gap: 30px; /* Aumentar el espacio entre las tarjetas de resultados */
+    margin-top: 20px; /* Espacio entre el título de la sección y las tarjetas */
+}
+
+.result-card {
+    background-color: var(--bg-color); /* Fondo de la tarjeta de resultado, un poco más claro */
+    padding: 20px; /* Padding ajustado para tarjetas internas */
+    border-left: 4px solid var(--accent-blue); /* Borde de acento */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-primary); /* Subtítulo de tarjeta de resultado */
+}
+
+.summary-content p {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.evaluation-text {
+    font-size: 0.95em;
+}
+
+.recommendations-list li {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* Estilos específicos para la evaluación de texto */
+.text-success {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.text-warning {
+    color: var(--warning-color);
+    font-weight: 600;
+}
+
+.text-danger {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+/* Formulario */
+form {
+    display: grid; /* Cambiar a grid */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 25px; /* Espacio entre las tarjetas de input */
+    text-align: left;
+    margin-top: 2rem; /* Mantener el margen superior */
+}
+
+.form-group {
+    /* Las propiedades de tarjeta ya definidas aquí están bien */
+    padding: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-subtle);
+    text-align: left;
+    /* Eliminar margin-bottom aquí, el gap del grid lo maneja */
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Más espacio entre label y input */
+    font-weight: 600; /* Un poco más de peso */
+    color: var(--text-primary); /* Color de texto principal para labels */
+    font-size: 1em; /* Asegurar tamaño de fuente adecuado */
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 14px 18px; /* Más padding para inputs */
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    font-family: var(--font-main);
+    font-size: 1.05em; /* Un poco más grande */
+    color: var(--text-primary);
+    background-color: var(--bg-color); /* Fondo del input que contraste ligeramente */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2); /* Sombra de foco más pronunciada */
+}
+
+/* Eliminar el margen inferior del último form-group para que no haya doble espacio antes de los botones */
+.input-card .form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Botones */
+.form-actions {
+    grid-column: 1 / -1; /* Ocupar todas las columnas */
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 5px; /* Ajustar el margen superior ya que el form-group no tiene bottom margin */
+}
+
+.btn {
+    padding: 12px 28px; /* Ajustar padding de botones */
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 1.05em; /* Un poco más grande */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-blue-dark);
+    transform: translateY(-3px); /* Efecto de hover más notorio */
+    box-shadow: 0 7px 14px rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--border-light);
+    color: var(--text-secondary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-3px); /* Efecto de hover más notorio */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.app-footer {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.highlight {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* Aviso de Simulación */
+.notice {
+    background-color: #fff3cd; /* Amarillo muy suave */
+    border: 1px solid var(--warning-color);
+    color: var(--text-primary);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.notice strong {
+    color: var(--warning-color);
+}
+
+/* Utilidades */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .app-wrapper {
+        gap: 20px;
+    }
+    .app-header {
+        padding: 20px 15px;
+    }
+    .app-title {
+        font-size: 2em;
+    }
+    .app-subtitle {
+        font-size: 0.9em;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card-title {
+        font-size: 1.5em;
+    }
+    .form-group {
+        padding: 15px;
+        margin-bottom: 0; /* Asegurar que no hay margin-bottom adicional */
+    }
+    label {
+        font-size: 0.9em;
+    }
+    input[type="text"], input[type="number"] {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+        font-size: 0.9em;
+        padding: 12px 20px;
+    }
+    .notice {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    .app-footer {
+        padding: 15px;
+    }
+    /* Asegurar que el formulario vuelva a una columna en móvil */
+    form {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px; /* Ajustar el gap en móvil */
+    }
+    .results-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 15px;
+    }
+    .result-card {
+        padding: 15px;
+    }
+} 
